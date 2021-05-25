@@ -5,6 +5,8 @@ CREATE TABLE logins(
 	password	varchar(256) not null
 );
 
+CREATE UNIQUE INDEX logins_single_admin ON logins(role) WHERE role = 'owner';
+
 CREATE TABLE recipes(
 	id		serial primary key,
 	name		varchar(256) not null,
